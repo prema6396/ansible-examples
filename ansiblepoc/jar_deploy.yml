@@ -34,12 +34,12 @@
         
     - name: Debug - Check JFrog Artifactory URL
       debug:
-        var: JFROG_ARTIFACTORY_URL
+        var: jfrog_artifactory_url
         
 
     - name: Download JAR from JFrog Artifactory
       uri:
-        url: "{{ JFROG_ARTIFACTORY_URL }}/{{ jfrog_repository }}/{{ artifact_path }}/coffeeShop-2.6.0.jar"
+        url: "{{ jfrog_artifactory_url }}/{{ jfrog_repository }}/{{ artifact_path }}/coffeeShop-2.6.0.jar"
         method: GET
         dest: "{{ download_destination }}/coffeeShop-2.6.0.jar"
         mode: "0644"
